@@ -1,0 +1,2 @@
+package dev.timbuksov;import jakarta.persistence.*;import java.math.BigDecimal;import java.time.Instant;
+@Entity @Table(name="customer_orders") public class CustomerOrder { @Id @GeneratedValue(strategy=GenerationType.IDENTITY)public Long id;public String customerName;public String email;@Column(precision=12,scale=2) public BigDecimal total;public Instant createdAt=Instant.now();@Lob public String itemsJson; }
